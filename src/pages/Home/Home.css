@@ -1,0 +1,23 @@
+.home {
+    padding: 15rem;
+}
+
+.home-header-container {
+    text-align: center;
+}
+
+.main-section-home {
+    display: flex;
+    margin: 1rem;
+
+}
+
+.crypto-list-container {
+    width: 70%;
+    border: solid 1px black;
+}
+
+.home-side-section {
+    width: 30%;
+    border: solid 1px blue;
+}
