@@ -3,6 +3,7 @@ import './Home.css';
 import CryptoList from './CryptoList';
 import HomeHeaderContainer from './HomeHeaderContainer';
 import HomeSideSection from './HomeSideSection';
+import Footer from '../../components/Footer/Footer'
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
         <CryptoList/>
         <HomeSideSection/>
       </div>
+      <Footer/>
     </>
   )
 }
