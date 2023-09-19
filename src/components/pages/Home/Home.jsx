@@ -3,7 +3,7 @@ import './Home.css';
 import CryptoList from './CryptoList';
 import HomeHeaderContainer from './HomeHeaderContainer';
 import HomeSideSection from './HomeSideSection';
-import Footer from '../../components/Footer/Footer'
+import Footer from '../../Footer/Footer'
 
 function Home() {
   return (

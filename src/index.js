@@ -5,6 +5,7 @@ import App from './App';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
+import { CryptoContextProvider } from './components/CryptoContext';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,6 +31,8 @@ const firebaseConfig = {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <CryptoContextProvider>
+      <App />
+    </CryptoContextProvider>
   </React.StrictMode>
 );
