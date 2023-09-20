@@ -4,9 +4,6 @@ function Footer() {
   return (
     <footer>
     <div class="footer-content">
-        <div class="footer-logo">
-            <img src="logo.png" alt="Your Logo"/>
-        </div>
         <div class="footer-links">
             <ul>
                 <li><a href="#">Home</a></li>
