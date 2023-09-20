@@ -98,18 +98,20 @@ function CryptoList() {
         currency: 'USD',
     });
 
-    const cryptoListItems = cryptoData.map((crypto) => (
-        <div key={crypto.id} className="crypto-list-item">
-          <img src={crypto.image} alt={crypto.name} className='item-image'/>
-          <p className='item-name'>{crypto.name}</p>
-          <p className='item-price'>Price: {USDollar.format(crypto.current_price)}</p>
-          <p className='item-change'>Change: {crypto.price_change_percentage_24h.toFixed(2)}</p>
-        </div>
-    ));
-      
-    return (
-        <div className='crypto-list-container'>{cryptoListItems}</div>
-    );
+    if (Object.keys(cryptoData).length > 0) { // If cryptoData is not empty
+        const cryptoListItems = cryptoData.map((crypto) => (
+            <div key={crypto.id} className="crypto-list-item">
+            <img src={crypto.image} alt={crypto.name} className='item-image'/>
+            <p className='item-name'>{crypto.name}</p>
+            <p className='item-price'>Price: {USDollar.format(crypto.current_price)}</p>
+            <p className='item-change'>Change: {crypto.price_change_percentage_24h.toFixed(2)}</p>
+            </div>
+        ));
+
+        return (
+            <div className='crypto-list-container'>{cryptoListItems}</div>
+        );
+    }
 
 }
 
