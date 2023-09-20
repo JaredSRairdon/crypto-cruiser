@@ -29,12 +29,13 @@ const CryptoContextProvider = ({ children }) => {
         fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
         .then((response) => {
             if (!response.ok) {
-            throw new Error('Network response was not ok');
+                throw new Error('Network response was not ok');
             }
             return response.json();
         })
         .then((data) => {
             // Handle the data from the API
+            setCryptoData(data);
             console.log(data);
         })
         .catch((error) => {
@@ -43,10 +44,10 @@ const CryptoContextProvider = ({ children }) => {
         });
     }
 
+    // useEffect hook for fetching cryptoData from CoinGecko API
     useEffect(() => {
-        let ignore = false; // for handling race conditions
         setCryptoData({});
-        fetchCryptoData()
+        fetchCryptoData();
     }, []);
 
     // Provides the game state and actions to consuming components
