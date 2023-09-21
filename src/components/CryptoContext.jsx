@@ -40,7 +40,7 @@ const CryptoContextProvider = ({ children }) => {
     }
 
     const fetchTrendingCrypto = () => {
-        fetch('https://api.coingecko.com/api/v3/search/trending')
+        return fetch('https://api.coingecko.com/api/v3/search/trending')
         .then((response) => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -62,7 +62,6 @@ const CryptoContextProvider = ({ children }) => {
     useEffect(() => {
         setCryptoData({});
         fetchCryptoData();
-        fetchTrendingCrypto();
     }, []);
 
     // Provides the game state and actions to consuming components
@@ -71,6 +70,7 @@ const CryptoContextProvider = ({ children }) => {
         setCryptoData,
         trendingCrypto,
         setTrendingCrypto,
+        fetchTrendingCrypto,
         user,
         auth,
         app,
