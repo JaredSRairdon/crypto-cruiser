@@ -8,12 +8,14 @@ import Footer from '../../Footer/Footer'
 function Home() {
   return (
     <>
-      <HomeHeaderContainer/>
-      <div className="main-section-home">
-        <CryptoList/>
-        <HomeSideSection/>
-      </div>
-      <Footer/>
+      <header><HomeHeaderContainer/></header>
+      <body>
+        <div className="main-section-home">
+          <CryptoList/>
+          <HomeSideSection/>
+        </div>
+      </body>
+      <footer><Footer/></footer>
     </>
   )
 }

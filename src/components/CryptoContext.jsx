@@ -12,7 +12,13 @@ const CryptoContextProvider = ({ children }) => {
     const [trendingCrypto, setTrendingCrypto] = useState({});
 
     const app = initializeApp({
-        // firebase config here
+        apiKey: "AIzaSyDjYUKzRj1FeInoS6UNs7i3ThyFnR9R3Hw",
+        authDomain: "crypto-cruiser.firebaseapp.com",
+        projectId: "crypto-cruiser",
+        storageBucket: "crypto-cruiser.appspot.com",
+        messagingSenderId: "724621495083",
+        appId: "1:724621495083:web:4ce8d15f3c15060129136e",
+        measurementId: "G-BEFY1LFC3S"
     });
     
     const db = getFirestore(app);
@@ -50,7 +56,6 @@ const CryptoContextProvider = ({ children }) => {
         .then((data) => {
             // Handle the data from the API
             setTrendingCrypto(data);
-            console.log(data);
         })
         .catch((error) => {
             // Handle errors

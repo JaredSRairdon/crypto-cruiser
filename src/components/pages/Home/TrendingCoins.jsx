@@ -12,6 +12,7 @@ function TrendingCoins() {
     });
 
     useEffect(() => {
+        console.log("Fetching trending crypto...")
         fetchTrendingCrypto()
             .then(() => {
                 setLoading(false);
@@ -27,20 +28,18 @@ function TrendingCoins() {
     } else if (!loading) {
         const maxItemsToShow = 3;
         const trendingCoinsItems = trendingCrypto.coins.slice(0, maxItemsToShow).map((trendingCoin) => (
-            <div key={trendingCoin.item.id} className="trending-coin-item">
+            <div key={trendingCoin.item.id} className="trending-crypto-item">
                 <img src={trendingCoin.item.small} alt="" />
-                <p>{trendingCoin.item.id}</p>
-                <p>{trendingCoin.item.price_btc}</p>
+                <p>{trendingCoin.item.name}</p>
+                <p>{trendingCoin.item.price_btc.toFixed(7)}</p>
                 <p>{trendingCoin.item.market_cap_rank}</p>
             </div>
         ))
         
-        console.log(trendingCrypto)
-
         return (
             <>
-                <h3>TrendingCoins</h3>
-                <div className='crypto-list-container'>{trendingCoinsItems}</div>
+                <h3>Trending Coins</h3>
+                <div className='trending-crypto-container'>{trendingCoinsItems}</div>
             </>
         );
     }

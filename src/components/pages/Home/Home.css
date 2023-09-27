@@ -13,12 +13,18 @@
 .home-header-content {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     gap: 1rem;
 }
 
 .home-header-content-item {
-    padding: 3rem;
-    border: solid 1px red;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: #bbbbbb;
 }
 
 .main-section-home {
@@ -50,5 +56,30 @@
 
 .home-side-section {
     width: 30%;
-    border: solid 1px blue;
+}
+
+.trending-crypto-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.trending-crypto-item {
+    display: flex;
+    gap: 1rem;
+    border-radius: 0.8rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: #f6f6f6;
+}
+
+.trending-crypto-item > p {
+    background-color: lightgray;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    border-radius: 0.4rem;
+}
+
+.trending-crypto-item > img {
+    border-radius: 1rem;
+    
 }
