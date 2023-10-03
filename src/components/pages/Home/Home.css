@@ -25,7 +25,38 @@
     align-items: center;
     gap: 0.6rem;
     background-color: #bbbbbb;
+    overflow: scroll;
+
 }
+
+.trending-crypto-container {
+    display: flex;
+    gap: 2rem;
+
+}
+
+.trending-crypto-item {
+    display: flex;
+    gap: 1rem;
+    border-radius: 0.8rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: #f6f6f6;
+
+}
+
+.trending-crypto-item > p {
+    background-color: lightgray;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    border-radius: 0.4rem;
+    max-height: 2.5rem;
+}
+
+.trending-crypto-item > img {
+    border-radius: 1rem;
+}
+
 
 .main-section-home {
     display: flex;
@@ -58,28 +89,3 @@
     width: 30%;
 }
 
-.trending-crypto-container {
-    display: flex;
-    gap: 2rem;
-}
-
-.trending-crypto-item {
-    display: flex;
-    gap: 1rem;
-    border-radius: 0.8rem;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    background-color: #f6f6f6;
-}
-
-.trending-crypto-item > p {
-    background-color: lightgray;
-    padding: 0.2rem 1rem 0.2rem 1rem;
-    border-radius: 0.4rem;
-}
-
-.trending-crypto-item > img {
-    border-radius: 1rem;
-    
-}

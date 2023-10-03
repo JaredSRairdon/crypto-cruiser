@@ -26,7 +26,7 @@ function TrendingCoins() {
     if (loading) { 
         return <div>Loading...</div>
     } else if (!loading) {
-        const maxItemsToShow = 3;
+        const maxItemsToShow = 10;
         const trendingCoinsItems = trendingCrypto.coins.slice(0, maxItemsToShow).map((trendingCoin) => (
             <div key={trendingCoin.item.id} className="trending-crypto-item">
                 <img src={trendingCoin.item.small} alt="" />
