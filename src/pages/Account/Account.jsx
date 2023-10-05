@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { CryptoContext } from '../../CryptoContext'
-import SignIn from '../../NavigationBar/SignIn';
+import { CryptoContext } from '../../contexts/CryptoContext';
+import SignIn from '../../components/SignIn/SignIn'
 import './Account.css'
 
 

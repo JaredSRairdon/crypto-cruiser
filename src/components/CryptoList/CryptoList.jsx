@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { CryptoContext } from '../../CryptoContext';
+import { CryptoContext } from '../../contexts/CryptoContext';
 
 function CryptoList() {
     const { cryptoData } = useContext(CryptoContext);

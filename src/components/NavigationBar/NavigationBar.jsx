@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
-import { CryptoContext } from '../CryptoContext';
+import { CryptoContext } from '../../contexts/CryptoContext';
 import { Link } from 'react-router-dom';
 import './NavigationBar.css'
-import SignIn from './SignIn';
-import SignOut from './SignOut';
+import SignIn from '../SignIn/SignIn';
+import SignOut from '../SignOut/SignOut';
 
 
 function NavigationBar() {

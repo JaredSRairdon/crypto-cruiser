@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { CryptoContext } from '../CryptoContext';
+import { CryptoContext } from '../../contexts/CryptoContext';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 
@@ -44,10 +44,6 @@ function SignIn() {
                 const credential = GoogleAuthProvider.credentialFromError(error);
                 // ...
             });
-        
-        
-
-
     }
 
   return (

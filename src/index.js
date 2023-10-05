@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-import { CryptoContextProvider } from './components/CryptoContext';
+import { CryptoContextProvider } from './contexts/CryptoContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

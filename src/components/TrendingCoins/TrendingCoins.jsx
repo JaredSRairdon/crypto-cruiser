@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { CryptoContext } from '../../CryptoContext';
+import { CryptoContext } from '../../contexts/CryptoContext';
 
 function TrendingCoins() {
   const { trendingCrypto, fetchTrendingCrypto } = useContext(CryptoContext);

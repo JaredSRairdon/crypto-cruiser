@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { CryptoContext } from '../CryptoContext';
+import { CryptoContext } from '../../contexts/CryptoContext';
 
 function SignOut() {
     const { user, auth } = useContext(CryptoContext);
