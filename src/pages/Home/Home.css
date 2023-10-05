@@ -19,20 +19,22 @@
 
 .home-header-content-item {
     padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 0.6rem;
     background-color: #bbbbbb;
-    overflow: scroll;
+    overflow: hidden;
+}
 
+.slick-list {
+    cursor: grab;
+}
+
+/* adding space between slick slides */
+.slick-slide > div {
+    margin: 0 1rem;
 }
 
 .trending-crypto-container {
-    display: flex;
     gap: 2rem;
-
 }
 
 .trending-crypto-item {
@@ -41,21 +43,15 @@
     border-radius: 0.8rem;
     align-items: center;
     justify-content: center;
+    background-color: beige;
     padding: 0.5rem;
-    background-color: #f6f6f6;
+    cursor: grab;
 
 }
 
-.trending-crypto-item > p {
-    background-color: lightgray;
-    padding: 0.2rem 1rem 0.2rem 1rem;
-    border-radius: 0.4rem;
+.trending-crypto-item img {
+    border-radius: 0.5rem;
 }
-
-.trending-crypto-item > img {
-    border-radius: 1rem;
-}
-
 
 .main-section-home {
     display: flex;

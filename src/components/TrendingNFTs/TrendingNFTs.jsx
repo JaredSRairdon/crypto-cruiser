@@ -1,15 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CryptoContext } from '../../contexts/CryptoContext';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 function TrendingNFTs() {
     const { trendingCrypto, fetchTrendingCrypto } = useContext(CryptoContext);
     const [loading, setLoading] = useState(true);
-  
-    // format number to US dollar
-    let USDollar = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-    });
   
     function truncateString(str, maxLength) {
         if (str.length <= maxLength) {
@@ -33,25 +30,48 @@ case, the `useEffect` hook is used to fetch trending crypto data and update the 
     }, []);
   
   
-      if (loading) { 
-          return <div>Loading...</div>
-      } else if (!loading) {
-          const maxItemsToShow = 10;
-          const trendingNFTItems = trendingCrypto.nfts.slice(0, maxItemsToShow).map((trendingNFT) => (
-              <div key={trendingNFT.id} className="trending-crypto-item">
-                  <img src={trendingNFT.thumb} alt="" />
-                  <p>{truncateString(trendingNFT.name, 17)}</p>
-                  <p>{trendingNFT.floor_price_24h_percentage_change.toFixed(3)}%</p>
-              </div>
-          ))
-            
-          return (
-              <>
-                  <h3>Trending NFTs</h3>
-                  <div className='trending-crypto-container'>{trendingNFTItems}</div>
-              </>
+    const settings = {
+        className: "center",
+        infinite: true,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+        centerPadding: "60px",
+        slidesToShow: 3,
+        swipeToSlide: true,
+        afterChange: function(index) {
+          console.log(
+            `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
           );
-      }
+        }
+    };
+
+
+    if (loading) { 
+        return <div>Loading...</div>
+    } else if (!loading) {
+        const maxItemsToShow = 10;
+        const trendingNFTItems = trendingCrypto.nfts.slice(0, maxItemsToShow).map((trendingNFT) => (
+            <React.Fragment key={trendingNFT.id}>
+                <div key={trendingNFT.id} className="trending-crypto-item">
+                <img src={trendingNFT.thumb} alt="" />
+                <p>{truncateString(trendingNFT.name, 17)}</p>
+                <p>{trendingNFT.floor_price_24h_percentage_change.toFixed(3)}%</p>
+            </div>
+            </React.Fragment>
+        ))
+    
+        return (
+            <>
+                <h1>Trending NFTs</h1>
+                <div className='trending-crypto-container'>
+                <Slider {...settings}>
+                    {trendingNFTItems}
+                </Slider>
+                </div>
+            </>
+        );
+    }
 }
 
 export default TrendingNFTs
