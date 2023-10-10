@@ -25,7 +25,7 @@ const CryptoContextProvider = ({ children }) => {
     const auth = getAuth();
     const [user] = useAuthState(auth);
 
-    // Calling CoinGeck API for grabbing CryptoData
+    // function to call CoinGecko API for crypto data
     const fetchCryptoData = () => {
         fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
         .then((response) => {
@@ -63,7 +63,7 @@ const CryptoContextProvider = ({ children }) => {
         });
     }
 
-    // useEffect hook for fetching cryptoData from CoinGecko API
+    // useEffect hook for fetching cryptoData from CoinGecko API on context mount
     useEffect(() => {
         setCryptoData({});
         fetchCryptoData();

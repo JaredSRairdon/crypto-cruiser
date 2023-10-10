@@ -36,7 +36,21 @@ function TrendingCoins() {
           console.log(
             `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
           );
-        }
+        },
+        responsive: [
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 3,
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 2,
+              }
+            }
+          ]
     };
 
     if (loading) { 

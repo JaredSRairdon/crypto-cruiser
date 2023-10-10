@@ -30,3 +30,20 @@
 .link {
     text-decoration: none;
 }
+
+/* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
+@media screen and (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        max-height: none;
+    }
+
+    .site-logo {
+        position:relative;
+        padding: 0;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+}
