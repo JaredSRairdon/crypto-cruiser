@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import CryptoNewsArticle from './CryptoNewsArticle';
 
 function CryptoNews() {
   const [loading, setLoading] = useState(true);
@@ -22,7 +23,7 @@ function CryptoNews() {
       .map(function(k) {return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);})
       .join('&');
 
-    console.log("https://api.thenewsapi.com/v1/news/all?" + query)
+    // console.log("https://api.thenewsapi.com/v1/news/all?" + query)
 
     // fetch("https://api.thenewsapi.com/v1/news/all?" + query, requestOptions)
     //   .then(response => response.text())
@@ -39,6 +40,7 @@ function CryptoNews() {
       .then((data) => {
           // Handle the data from the API
           setCryptoNewsArticles(data.data);
+          console.log(`Successfully fetched CryptoNews!`)
           console.log(data.data)
       })
       .catch((error) => {
@@ -49,7 +51,6 @@ function CryptoNews() {
 
   // Effect to call the fetchCryptoNews function and set the loading state while doing so.
   useEffect(() => {
-    console.log("Fetching crypto news...")
     fetchCryptoNews()
         .then(() => {
             setLoading(false);
@@ -62,12 +63,9 @@ function CryptoNews() {
   if (loading) { 
       return <div>Loading...</div>
   } else if (!loading) {
-      const cryptoNewsArticleElements = cryptoNewsArticles.map((newsArticle) => (
-        <React.Fragment key={newsArticle.uuid}>
-          <article key={newsArticle.uuid} className='crypto-news-article'>
-            <img src={newsArticle.image_url} alt="" />
-            <h3 className="article-title">{newsArticle.title}</h3>
-          </article>
+      const cryptoNewsArticleElements = cryptoNewsArticles.map((newsArticleData) => (
+        <React.Fragment key={newsArticleData.uuid}>
+          <CryptoNewsArticle newsArticleData={newsArticleData}/>
         </React.Fragment>
       ));
 
