@@ -30,7 +30,7 @@ function TrendingCoins() {
         dots: false,
         autoplay: true,
         centerPadding: "60px",
-        slidesToShow: 5,
+        slidesToShow: 4,
         swipeToSlide: true,
         afterChange: function(index) {
           console.log(
