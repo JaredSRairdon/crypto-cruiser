@@ -30,7 +30,7 @@ function TrendingCoins() {
         dots: false,
         autoplay: true,
         centerPadding: "60px",
-        slidesToShow: 4,
+        slidesToShow: 3,
         swipeToSlide: true,
         afterChange: function(index) {
           console.log(
@@ -41,13 +41,13 @@ function TrendingCoins() {
             {
               breakpoint: 1200,
               settings: {
-                slidesToShow: 3,
+                slidesToShow: 2,
               }
             },
             {
               breakpoint: 480,
               settings: {
-                slidesToShow: 2,
+                slidesToShow: 1,
               }
             }
           ]
@@ -74,7 +74,7 @@ function TrendingCoins() {
                 <div className="trending-crypto-container">
                     {
                         <>
-                            <h1>Trending coins</h1>
+                            <h2>Trending coins</h2>
                             <Slider {...settings}>
                                 {trendingCoinsItems}
                             </Slider>

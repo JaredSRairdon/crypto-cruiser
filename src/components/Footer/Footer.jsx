@@ -1,21 +1,12 @@
 import React from 'react'
+import './Footer.css'
 
 function Footer() {
   return (
-    <footer>
-    <div class="footer-content">
-        <div class="footer-links">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
+    <footer class="footer-content">
         <div class="footer-contact">
-            <p>Contact us: contact@example.com</p>
+            <p>Developer Contact: jaredsrairdon@gmail.com</p>
         </div>
-    </div>
     </footer>
   )
 }

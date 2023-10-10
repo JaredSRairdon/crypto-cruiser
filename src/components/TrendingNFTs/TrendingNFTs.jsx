@@ -43,7 +43,21 @@ case, the `useEffect` hook is used to fetch trending crypto data and update the 
           console.log(
             `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
           );
-        }
+        },
+        responsive: [
+            {
+              breakpoint: 1200,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+              }
+            }
+          ]
     };
 
 
@@ -63,11 +77,11 @@ case, the `useEffect` hook is used to fetch trending crypto data and update the 
     
         return (
             <>
-                <h1>Trending NFTs</h1>
                 <div className='trending-crypto-container'>
-                <Slider {...settings}>
-                    {trendingNFTItems}
-                </Slider>
+                    <h2>Trending NFTs</h2>
+                    <Slider {...settings}>
+                        {trendingNFTItems}
+                    </Slider>
                 </div>
             </>
         );

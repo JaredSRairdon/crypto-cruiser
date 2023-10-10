@@ -34,7 +34,9 @@
 }
 
 .trending-crypto-container {
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
 
 .trending-crypto-item {
