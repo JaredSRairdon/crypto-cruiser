@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function TrendingNFTs() {
-    const { trendingCrypto, fetchTrendingCrypto } = useContext(CryptoContext);
+    const { trendingCrypto, fetchTrendingCrypto, trendingCryptoLoading } = useContext(CryptoContext);
     const [loading, setLoading] = useState(true);
   
     function truncateString(str, maxLength) {
@@ -18,16 +18,16 @@ function TrendingNFTs() {
 
 /* The `useEffect` hook in React is used to perform side effects in functional components. In this
 case, the `useEffect` hook is used to fetch trending crypto data and update the component's state. */
-    useEffect(() => {
-        console.log("Fetching trending crypto...")
-        fetchTrendingCrypto()
-            .then(() => {
-                setLoading(false);
-            })
-            .catch((error) => {
-                setLoading(false);
-            });
-    }, []);
+    // useEffect(() => {
+    //     console.log("Fetching trending crypto...")
+    //     fetchTrendingCrypto()
+    //         .then(() => {
+    //             setLoading(false);
+    //         })
+    //         .catch((error) => {
+    //             setLoading(false);
+    //         });
+    // }, []);
   
   
     const settings = {
@@ -61,9 +61,9 @@ case, the `useEffect` hook is used to fetch trending crypto data and update the 
     };
 
 
-    if (loading) { 
+    if (trendingCryptoLoading) { 
         return <div>Loading...</div>
-    } else if (!loading) {
+    } else if (!trendingCryptoLoading) {
         const maxItemsToShow = 10;
         const trendingNFTItems = trendingCrypto.nfts.slice(0, maxItemsToShow).map((trendingNFT) => (
             <React.Fragment key={trendingNFT.id}>

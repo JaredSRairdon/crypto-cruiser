@@ -8,9 +8,10 @@ import { getAuth } from 'firebase/auth';
 const CryptoContext = createContext();
 
 const CryptoContextProvider = ({ children }) => {
-    const [cryptoData, setCryptoData] = useState({});
     const [trendingCrypto, setTrendingCrypto] = useState({});
+    const [trendingCryptoLoading, setTrendingCryptoLoading] = useState(true);
 
+    // Firebase initialization
     const app = initializeApp({
         apiKey: "AIzaSyDjYUKzRj1FeInoS6UNs7i3ThyFnR9R3Hw",
         authDomain: "crypto-cruiser.firebaseapp.com",
@@ -25,27 +26,7 @@ const CryptoContextProvider = ({ children }) => {
     const auth = getAuth();
     const [user] = useAuthState(auth);
 
-    // function to call CoinGecko API for crypto data
-    const fetchCryptoData = () => {
-        fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then((data) => {
-            // Handle the data from the API
-            setCryptoData(data);
-            console.log(data);
-        })
-        .catch((error) => {
-            // Handle errors
-            console.error('There was a problem with the fetch operation:', error);
-        });
-    }
-
-    const fetchTrendingCrypto = () => {
+    const fetchTrendingCrypto = async () => {
         return fetch('https://api.coingecko.com/api/v3/search/trending')
         .then((response) => {
             if (!response.ok) {
@@ -63,19 +44,27 @@ const CryptoContextProvider = ({ children }) => {
         });
     }
 
-    // useEffect hook for fetching cryptoData from CoinGecko API on context mount
     useEffect(() => {
-        setCryptoData({});
-        fetchCryptoData();
+        console.log("Fetching trending crypto...")
+        setTrendingCrypto([]);
+        fetchTrendingCrypto()
+            .then(() => {
+                setTrendingCryptoLoading(false);
+            })
+            .catch((error) => {
+                setTrendingCryptoLoading(false);
+            });
     }, []);
 
     // Provides the game state and actions to consuming components
     const contextValue = {
-        cryptoData,
-        setCryptoData,
+        // cryptoData,
+        // setCryptoData,
+        // cryptoDataLoading,
         trendingCrypto,
         setTrendingCrypto,
         fetchTrendingCrypto,
+        trendingCryptoLoading,
         user,
         auth,
         app,

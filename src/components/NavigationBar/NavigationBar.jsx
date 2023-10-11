@@ -16,7 +16,7 @@ function NavigationBar() {
           <Link to="/" className='link'>Home</Link>
           <Link to="/about" className='link'>About</Link>
           <Link to="/account" className='link'>Account</Link>
-          {user ? <SignOut/>:<SignIn/>}
+          {/* {user ? <SignOut/>:<SignIn/>} */}
       </nav>
     </header>
   )

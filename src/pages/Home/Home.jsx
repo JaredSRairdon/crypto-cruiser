@@ -23,7 +23,7 @@ function Home() {
       <body>
         <div className="main-section-home">
           <CryptoList/>
-          <CryptoNews/>
+          <CryptoNews key="cryoto-news-component"/>
         </div>
       </body>
       <footer><Footer/></footer>

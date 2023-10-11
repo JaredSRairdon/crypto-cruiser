@@ -5,23 +5,22 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function TrendingCoins() {
-    const { trendingCrypto, fetchTrendingCrypto } = useContext(CryptoContext);
-    const [loading, setLoading] = useState(true);
+    const { trendingCrypto, fetchTrendingCrypto, trendingCryptoLoading } = useContext(CryptoContext);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const containerRef = useRef(null);
 
-    useEffect(() => {
-        console.log("Fetching trending crypto...")
-        fetchTrendingCrypto()
-            .then(() => {
-                setLoading(false);
-            })
-            .catch((error) => {
-                setLoading(false);
-            });
-    }, []);
+    // useEffect(() => {
+    //     console.log("Fetching trending crypto...")
+    //     fetchTrendingCrypto()
+    //         .then(() => {
+    //             setLoading(false);
+    //         })
+    //         .catch((error) => {
+    //             setLoading(false);
+    //         });
+    // }, []);
 
     const settings = {
         className: "center",
@@ -53,9 +52,9 @@ function TrendingCoins() {
           ]
     };
 
-    if (loading) { 
+    if (trendingCryptoLoading) { 
         return <div>Loading...</div>
-    } else if (!loading) {
+    } else if (!trendingCryptoLoading) {
         const maxItemsToShow = 10;
         // TODO: Handle errors for missing data with the below slice function
         const trendingCoinsItems = trendingCrypto.coins.slice(0, maxItemsToShow).map((trendingCoin) => (
