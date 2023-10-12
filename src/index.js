@@ -7,9 +7,9 @@ import { CryptoContextProvider } from './contexts/CryptoContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode> // Re-mounts the child components twice in dev mode
     <CryptoContextProvider>
       <App />
     </CryptoContextProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

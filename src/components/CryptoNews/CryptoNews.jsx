@@ -15,20 +15,13 @@ function CryptoNews() {
       api_token: 'wHpA4RYJ44hv1PSe7qUFXBXM1p9fv5gmiNwBjWsv',
       categories: 'business,tech',
       search: 'crypto',
-      limit: '3'
+      limit: '3',
     };
 
     // Creates a query string from an object of parameters. 
     let query = Object.keys(params)
       .map(function(k) {return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);})
       .join('&');
-
-    // console.log("https://api.thenewsapi.com/v1/news/all?" + query)
-
-    // fetch("https://api.thenewsapi.com/v1/news/all?" + query, requestOptions)
-    //   .then(response => response.text())
-    //   .then(result => console.log(result))
-    //   .catch(error => console.log('error', error));
 
     fetch("https://api.thenewsapi.com/v1/news/all?" + query, requestOptions)
       .then((response) => {

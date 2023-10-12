@@ -68,10 +68,37 @@ case, the `useEffect` hook is used to fetch trending crypto data and update the 
         const trendingNFTItems = trendingCrypto.nfts.slice(0, maxItemsToShow).map((trendingNFT) => (
             <React.Fragment key={trendingNFT.id}>
                 <div key={trendingNFT.id} className="trending-crypto-item">
-                <img src={trendingNFT.thumb} alt="" />
-                <p>{truncateString(trendingNFT.name, 17)}</p>
-                <p>{trendingNFT.floor_price_24h_percentage_change.toFixed(3)}%</p>
-            </div>
+                    <img src={trendingNFT.thumb} alt="" />
+                    <div>
+                      {/* <header><h4>{truncateString(trendingNFT.name, 17)}</h4></header> */}
+                      <header><h4>{trendingNFT.name}</h4></header>
+                      <body className='trending-crypto-data'>
+                        <div className="trending-data-item">
+                          <p>{trendingNFT.floor_price_24h_percentage_change.toFixed(3)}%</p>
+                          <label>% Change</label>
+                        </div>
+                      </body>
+                    </div>
+
+
+                </div>
+
+            {/* <div key={trendingNFT.id} className="trending-crypto-item">
+                    <img src={trendingCoin.item.small} alt="" />
+                    <div>
+                      <header><h4>{trendingCoin.item.name}</h4></header>
+                      <body className='trending-crypto-data'>
+                        <div className="data-item">
+                          <label>BTC</label>
+                          <p>{trendingCoin.item.price_btc.toFixed(7)}</p>
+                        </div>
+                        <div className="data-item">
+                          <label>Rank</label>
+                          <p>{trendingCoin.item.market_cap_rank}</p>
+                        </div>
+                      </body>
+                    </div>
+                </div> */}
             </React.Fragment>
         ))
     

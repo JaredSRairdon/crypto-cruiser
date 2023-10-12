@@ -48,11 +48,22 @@
     background-color: beige;
     padding: 1rem;
     cursor: grab;
-
 }
 
 .trending-crypto-item img {
+
     border-radius: 0.5rem;
+}
+
+.trending-crypto-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.trending-crypto-data label {
+    font-size: 0.8rem;
 }
 
 .main-section-home {

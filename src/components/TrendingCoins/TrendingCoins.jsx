@@ -61,9 +61,21 @@ function TrendingCoins() {
             <React.Fragment key={trendingCoin.item.id}>
                 <div key={trendingCoin.item.id} className="trending-crypto-item">
                     <img src={trendingCoin.item.small} alt="" />
-                    <p>{trendingCoin.item.name}</p>
-                    <p>{trendingCoin.item.price_btc.toFixed(7)}</p>
-                    <p>{trendingCoin.item.market_cap_rank}</p>
+                    <div>
+                      <header><h4>{trendingCoin.item.name}</h4></header>
+                      <body className='trending-crypto-data'>
+                        <div className="trending-data-item">
+                          <p>{trendingCoin.item.price_btc.toFixed(7)}</p>
+                          <label>BTC</label>
+
+                        </div>
+                        <div className="trending-data-item">
+                          <p>{trendingCoin.item.market_cap_rank}</p>
+                          <label>Rank</label>
+
+                        </div>
+                      </body>
+                    </div>
                 </div>
             </React.Fragment>
         ))
