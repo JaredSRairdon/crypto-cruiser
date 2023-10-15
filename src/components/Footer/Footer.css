@@ -1,4 +1,60 @@
 .footer-content {
     background-color: var(--elevation-bg-1);
-    padding: 5rem;
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.newsletter-container {
+    background-color: var(--elevation-bg-4);
+    max-width: 35%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.newsletter-container input {
+    padding: 0.8rem;
+}
+
+.newsletter-container button {
+    padding: 0.8rem;
+}
+
+.footer-link-column li {
+    padding-top: 1rem;
+}
+
+.footer-link-column ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer-link-column a {
+    text-decoration: none;
+    color: #d3d3d3;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.privacy-policy {
+    display: flex;
+    gap: 2rem;
+    color: #d3d3d3;
+    cursor: default;
+}
+
+.social-icon {
+    padding-left: 2rem;
+    font-size: 3rem;
 }

@@ -1,20 +1,6 @@
-.home {
-    padding: 15rem;
-}
-
-.home-header-container {
-    text-align: center;
-}
-
 .home-header {
     padding: 4rem;
-}
-
-.home-header-content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1rem;
+    text-align: center;
 }
 
 .trending {

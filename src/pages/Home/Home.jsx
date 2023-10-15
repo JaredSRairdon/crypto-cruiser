@@ -9,12 +9,7 @@ import CryptoNews from '../../components/CryptoNews/CryptoNews';
 function Home() {
   return (
     <>
-      <header className='home-header-container'>
-        <h1 className="home-header">Unlock the Power of Cryptocurrency.</h1>
-        <div className='home-header-content'>
-    
-        </div>
-      </header>
+      <h1 className="home-header">Unlock the Power of Cryptocurrency.</h1>
       <body>
         <div className="trending trending-coins">
             <TrendingCoins/>
@@ -27,7 +22,6 @@ function Home() {
             <TrendingNFTs/>
         </div>
       </body>
-      <footer><Footer/></footer>
     </>
   )
 }
