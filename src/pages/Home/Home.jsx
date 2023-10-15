@@ -12,18 +12,19 @@ function Home() {
       <header className='home-header-container'>
         <h1 className="home-header">Unlock the Power of Cryptocurrency.</h1>
         <div className='home-header-content'>
-          <div className="home-header-content-item trending-coins">
-            <TrendingCoins/>
-          </div>
-          <div className="home-header-content-item trending-nfts">
-            <TrendingNFTs/>
-          </div>        
+    
         </div>
       </header>
       <body>
+        <div className="trending trending-coins">
+            <TrendingCoins/>
+        </div> 
         <div className="main-section-home">
           <CryptoList/>
           <CryptoNews key="cryoto-news-component"/>
+        </div>
+        <div className="trending trending-nfts">
+            <TrendingNFTs/>
         </div>
       </body>
       <footer><Footer/></footer>

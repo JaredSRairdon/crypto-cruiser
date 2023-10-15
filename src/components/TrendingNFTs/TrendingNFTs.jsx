@@ -72,12 +72,12 @@ case, the `useEffect` hook is used to fetch trending crypto data and update the 
                     <div>
                       {/* <header><h4>{truncateString(trendingNFT.name, 17)}</h4></header> */}
                       <header><h4>{trendingNFT.name}</h4></header>
-                      <body className='trending-crypto-data'>
+                      <main className='trending-crypto-data'>
                         <div className="trending-data-item">
                           <p>{trendingNFT.floor_price_24h_percentage_change.toFixed(3)}%</p>
                           <label>% Change</label>
                         </div>
-                      </body>
+                      </main>
                     </div>
 
 

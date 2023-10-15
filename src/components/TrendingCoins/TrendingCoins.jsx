@@ -63,7 +63,7 @@ function TrendingCoins() {
                     <img src={trendingCoin.item.small} alt="" />
                     <div>
                       <header><h4>{trendingCoin.item.name}</h4></header>
-                      <body className='trending-crypto-data'>
+                      <main className='trending-crypto-data'>
                         <div className="trending-data-item">
                           <p>{trendingCoin.item.price_btc.toFixed(7)}</p>
                           <label>BTC</label>
@@ -74,7 +74,7 @@ function TrendingCoins() {
                           <label>Rank</label>
 
                         </div>
-                      </body>
+                      </main>
                     </div>
                 </div>
             </React.Fragment>

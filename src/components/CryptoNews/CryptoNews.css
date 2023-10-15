@@ -1,5 +1,5 @@
 .crypto-news {
-    background-color: #bbbbbb;
+    background-color: var(--elevation-bg-1);
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@
 }
 
 .crypto-news-article {
-    background-color: beige;
+    background-color: var(--elevation-bg-4);
     border-radius: 1rem;
     padding: 1rem;
     margin: 1rem 1rem 0 1rem;

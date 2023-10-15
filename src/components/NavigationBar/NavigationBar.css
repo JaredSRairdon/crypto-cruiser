@@ -10,6 +10,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    background-color: var(--elevation-bg-1);
+    padding: 1rem;
 }
 
 .navbar {
@@ -19,12 +21,14 @@
     gap: 1rem;
     justify-self: flex-end;
     padding-right: 3rem;
+    border-radius: 1rem;
 }
 
 .site-logo {
     position: absolute;
     left: 0;
     padding-left: 3rem;
+    color: white
 }
 
 .link {

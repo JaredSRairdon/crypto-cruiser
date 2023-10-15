@@ -1,3 +1,26 @@
+:root {
+  --lapis-lazuli: #336699ff;
+  --night: #12130fff;
+  --dark-grey: #121212;
+  --powder-blue: #acbed8ff;
+  --pistachio: #9cd08fff;
+  --sunset: #efd09eff;
+
+  /* Elevation background colors */
+  --elevation-bg-1: rgba(255, 255, 255, 0.05);
+  --elevation-bg-2: rgba(255, 255, 255, 0.07);
+  --elevation-bg-3: rgba(255, 255, 255, 0.08);
+  --elevation-bg-4: rgba(255, 255, 255, 0.09);
+  --elevation-bg-6: rgba(255, 255, 255, 0.11);
+  --elevation-bg-8: rgba(255, 255, 255, 0.12);
+  --elevation-bg-12: rgba(255, 255, 255, 0.14);
+  --elevation-bg-16: rgba(255, 255, 255, 0.15);
+  --elevation-bg-24: rgba(255, 255, 255, 0.16);
+
+  background-color: var(--dark-grey);
+  color: white;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +30,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  color: white;
 }
