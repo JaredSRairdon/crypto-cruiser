@@ -57,6 +57,10 @@ function CryptoList() {
                     <h4 className='item-name'>{crypto.name}</h4>
                     <p className='item-price'>Price: {USDollar.format(crypto.current_price)}</p>
                     <p className='item-change'>Change: {crypto.price_change_percentage_24h.toFixed(2)}%</p>
+                    <div className="button-wrapper">
+                        <button className='crypto-list-button' id='add-to-watchlist'>Add to Watchlist</button>
+                        <button className="crypto-list-button" id='details'>Details</button>
+                    </div>
                 </div>
             ));
 

@@ -3,21 +3,27 @@
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    padding: 1rem;
+    gap: 0.5rem;
 }
 
 .crypto-news-article {
     background-color: var(--elevation-bg-4);
     border-radius: 1rem;
-    padding: 1rem;
-    margin: 1rem 1rem 0 1rem;
-}
-
-.crypto-news-article:last-child {
-    margin-bottom: 1rem;
+    padding: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 .crypto-news-article > img {
     max-width: 30%;
+    height: auto;
 }
 
+.article-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}

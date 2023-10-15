@@ -5,9 +5,11 @@ function CryptoNewsArticle({ newsArticleData }) {
   return (
     <article key={newsArticleData.uuid} className='crypto-news-article'>
       <img src={newsArticleData.image_url} alt="" />
-      <h3 className="article-title">{newsArticleData.title}</h3>
-      <p className="article-snippet">{newsArticleData.snippet}</p>
-      <a href={newsArticleData.url} className="article-link" target='_blank'>Visit this article</a>
+      <div className="article-content">
+        <h3 className="article-title">{newsArticleData.title}</h3>
+        <p className="article-snippet">{newsArticleData.snippet}</p>
+        <a href={newsArticleData.url} className="article-link" target='_blank'>Visit this article</a>
+      </div>
     </article>
   )
 }
