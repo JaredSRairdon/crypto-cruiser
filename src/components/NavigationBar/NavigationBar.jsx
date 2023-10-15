@@ -13,9 +13,9 @@ function NavigationBar() {
     <header className='header'>
       <h1 className="site-logo">Crypto Cruiser</h1>
       <nav className="navbar">
-          <Link to="/" className='link'>Home</Link>
-          <Link to="/about" className='link'>About</Link>
-          <Link to="/account" className='link'>Account</Link>
+          <Link to="/crypto-cruiser" className='link'>Home</Link>
+          <Link to="/crypto-cruiser/about" className='link'>About</Link>
+          <Link to="/crypto-cruiser/account" className='link'>Account</Link>
           {/* {user ? <SignOut/>:<SignIn/>} */}
       </nav>
     </header>

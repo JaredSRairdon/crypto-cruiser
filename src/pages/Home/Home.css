@@ -75,10 +75,7 @@
   
 /* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
 @media screen and (max-width: 480px) {
-    .crypto-list-item {
-        flex-direction: column;
-        gap: 0.1rem;
-    }
+
 
     .button-wrapper {
         position: inherit;
