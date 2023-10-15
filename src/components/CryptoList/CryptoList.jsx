@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { CryptoContext } from '../../contexts/CryptoContext';
+import './CryptoList.css'
 
 function CryptoList() {
     const [cryptoData, setCryptoData] = useState({});
@@ -46,6 +47,18 @@ function CryptoList() {
         currency: 'USD',
     });
 
+    function abbreviateNumber(value) {
+        let newValue = value;
+        if (value >= 1e12) { // Trillion
+            newValue = (value / 1e12).toFixed(1) + "T";
+        } else if (value >= 1e9) { // Billion
+            newValue = (value / 1e9).toFixed(1) + "B";
+        } else if (value >= 1e6) { // Million
+            newValue = (value / 1e6).toFixed(1) + "M";
+        }
+        return newValue;
+    }
+
     if (cryptoDataLoading) { 
         return <div>Loading...</div>
     } else if (!cryptoDataLoading) {
@@ -53,10 +66,27 @@ function CryptoList() {
             const maxItemsToShow = 8;
             const cryptoListItems = cryptoData.slice(0, maxItemsToShow).map((crypto) => (
                 <div key={crypto.id} className="crypto-list-item">
-                    <img src={crypto.image} alt={crypto.name} className='item-image'/>
-                    <h4 className='item-name'>{crypto.name}</h4>
-                    <p className='item-price'>Price: {USDollar.format(crypto.current_price)}</p>
-                    <p className='item-change'>Change: {crypto.price_change_percentage_24h.toFixed(2)}%</p>
+                    <div className="ticker-container">
+                        <img src={crypto.image} alt={crypto.name} className='item-image'/>
+                        <div className='ticker'>
+                            <h2 className="item-symbol">{crypto.symbol.toUpperCase()}</h2>
+                            <h4 className='item-name'>{crypto.name}</h4>
+                        </div>
+                    </div>
+                    <div className="item-data-container">
+                        <div className="item-data">
+                            <label>Price</label>
+                            <p>{USDollar.format(crypto.current_price)}</p>
+                        </div>
+                        <div className="item-data">
+                            <label>Change</label>
+                            <p>{crypto.price_change_percentage_24h.toFixed(2)}%</p>
+                        </div>
+                        <div className="item-data">
+                            <label>Market Cap</label>
+                            <p>{abbreviateNumber(crypto.market_cap)}</p>
+                        </div>
+                    </div>
                     <div className="button-wrapper">
                         <button className='crypto-list-button' id='add-to-watchlist'>Add to Watchlist</button>
                         <button className="crypto-list-button" id='details'>Details</button>

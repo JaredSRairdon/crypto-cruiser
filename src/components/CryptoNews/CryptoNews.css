@@ -3,7 +3,6 @@
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     padding: 1rem;
     gap: 0.5rem;
 }

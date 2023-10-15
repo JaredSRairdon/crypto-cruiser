@@ -1,0 +1,105 @@
+.crypto-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    min-width: 60%;
+    background-color: var(--elevation-bg-1);
+}
+
+.crypto-list-item {
+    background-color: var(--elevation-bg-4);
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    text-align: center;
+    gap: 1rem;
+    position: relative;
+    border-radius: 0.5rem;
+    justify-content: center;
+}
+
+.crypto-list-item img {
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+.crypto-list-item h4 {
+    color: var(--mint);
+}
+
+.ticker-container {
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.ticker {
+    text-align: left
+}
+
+.item-data-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.item-data label {
+    font-weight: 700;
+}
+
+
+.button-wrapper {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 1rem;
+    padding-right: 1rem;
+    justify-content: center;
+}
+
+.crypto-list-button {
+    color: white; /* Text color */
+    padding: 12px 20px; /* Button padding */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Mouse cursor changes on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth background-color and transform transitions */
+    outline: none; /* Remove focus outline */
+    font-weight: 500;
+}
+      
+.crypto-list-button:hover {
+    background-color: #0056b3; /* Slightly darker shade on hover */
+    transform: translateY(-2px); /* Button moves up slightly on hover */
+}
+
+.crypto-list-button:active {
+    transform: translateY(1px); /* Button moves down slightly when pressed */
+}
+
+#add-to-watchlist {
+    background-color: var(--pistachio);
+}
+
+#details {
+    background-color: rgb(102, 164, 87);
+
+}
+
+/* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
+@media screen and (max-width: 480px) {
+    .crypto-list-item {
+
+    }
+
+    .ticker-container {
+        position:inherit;
+    }
+
+    .button-wrapper {
+        position:inherit;
+
+    }
+}
