@@ -12,9 +12,9 @@ function Footer() {
         <div className="footer-link-column">
           <h3>Links</h3>
           <ul>
-            <li><Link to="/crypto-cruiser" className='link'>Home</Link></li>
-            <li><Link to="/crypto-cruiser/about" className='link'>About</Link></li>
-            <li><Link to="/crypto-cruiser/account" className='link'>Account</Link></li>
+            <li><Link to="/" className='link'>Home</Link></li>
+            <li><Link to="about" className='link'>About</Link></li>
+            <li><Link to="account" className='link'>Account</Link></li>
           </ul>
         </div>
         <div className="footer-link-column">
