@@ -75,11 +75,11 @@ function CryptoList() {
                     </div>
                     <div className="item-data-container">
                         <div className="item-data">
-                            <label>Price</label>
+                            <label>Current Price</label>
                             <p>{USDollar.format(crypto.current_price)}</p>
                         </div>
                         <div className="item-data">
-                            <label>Change</label>
+                            <label>24Hr Change</label>
                             <p>{crypto.price_change_percentage_24h.toFixed(2)}%</p>
                         </div>
                         <div className="item-data">

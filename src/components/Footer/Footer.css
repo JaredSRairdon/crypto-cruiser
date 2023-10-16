@@ -12,7 +12,7 @@ footer {
 
 .footer-top {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .newsletter-container {
@@ -24,12 +24,23 @@ footer {
     gap: 0.4rem;
 }
 
+.newsletter-input-container {
+    display: flex;
+    max-width: 100%;
+}
+
 .newsletter-container input {
-    padding: 0.8rem;
+    padding: 0.5rem 0 0.5rem 0;
 }
 
 .newsletter-container button {
-    padding: 0.8rem;
+    -webkit-appearance: none;
+    border-radius: 0;
+    
+}
+
+.footer-link-container {
+    display: flex;
 }
 
 .footer-link-column li {
@@ -59,13 +70,42 @@ footer {
 }
 
 .social-icon {
-    padding-left: 2rem;
     font-size: 3rem;
 }
 
 /* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
 @media screen and (max-width: 480px) {
+    .footer-content {
+        padding: 2rem;
+    }
+    
     .footer-top {
         flex-direction: column;
+    }
+
+    .newsletter-container {
+        max-width: 100%;
+    }
+
+
+}
+
+
+/* ============ MEDIA QUERIES (MEDIUM DEVICES/TABLET) =========== */
+@media screen and (max-width: 1200px) {
+    .footer-bottom {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+    };
+
+    .footer-link-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-link-column {
+        padding: 2rem
     }
 }

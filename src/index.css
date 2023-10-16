@@ -35,3 +35,7 @@ body {
 a {
   color: white;
 }
+
+.content {
+  /* max-width: 80%; */
+}

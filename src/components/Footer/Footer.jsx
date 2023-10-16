@@ -9,30 +9,32 @@ function Footer() {
   return (
     <footer class="footer-content">
       <div className="footer-top">
-        <div className="footer-link-column">
-          <h3>Links</h3>
-          <ul>
-            <li><Link to="/" className='link'>Home</Link></li>
-            <li><Link to="about" className='link'>About</Link></li>
-            <li><Link to="account" className='link'>Account</Link></li>
-          </ul>
-        </div>
-        <div className="footer-link-column">
-          <h3>Other Projects</h3>
-          <ul>
-            <li><a href="https://jaredsrairdon.github.io/brick-click/">Brick Click</a></li>
-            <li><a href="https://jaredsrairdon.github.io/emoji-tac-toe/">Emoji-Tac-Toe!</a></li>
-          </ul>
-        </div>
-        <div className="footer-link-column">
-          <h3>Socials</h3>
-          <ul>
-            <li><a href="">LinkedIn</a></li>
-            <li><a href="">Indeed</a></li>
-            <li><a href="">My Portfolio!</a></li>
-          </ul>
-        </div>
         <Newsletter/>
+        <div className="footer-link-container">
+          <div className="footer-link-column">
+            <h3>Links</h3>
+            <ul>
+              <li><Link to="/" className='link'>Home</Link></li>
+              <li><Link to="about" className='link'>About</Link></li>
+              <li><Link to="account" className='link'>Account</Link></li>
+            </ul>
+          </div>
+          <div className="footer-link-column">
+            <h3>Other Projects</h3>
+            <ul>
+              <li><a href="https://jaredsrairdon.github.io/brick-click/">Brick Click</a></li>
+              <li><a href="https://jaredsrairdon.github.io/emoji-tac-toe/">Emoji-Tac-Toe!</a></li>
+            </ul>
+          </div>
+          <div className="footer-link-column">
+            <h3>Socials</h3>
+            <ul>
+              <li><a href="">LinkedIn</a></li>
+              <li><a href="">Indeed</a></li>
+              <li><a href="">My Portfolio!</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <hr />
       <div className="footer-bottom">

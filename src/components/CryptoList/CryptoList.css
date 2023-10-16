@@ -91,15 +91,18 @@
 /* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
 @media screen and (max-width: 480px) {
     .crypto-list-item {
-
+        flex-direction: column;
     }
 
     .ticker-container {
-        position:inherit;
+        position:static;
     }
 
     .button-wrapper {
-        position:inherit;
+        position:static;
+    }
 
+    .item-data-container {
+        padding: 0 1rem 0 1rem;
     }
 }
