@@ -22,6 +22,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
+    justify-content: center;
 }
 
 .newsletter-input-container {
@@ -41,6 +42,7 @@ footer {
 
 .footer-link-container {
     display: flex;
+    gap: 2rem;
 }
 
 .footer-link-column li {
@@ -88,6 +90,7 @@ footer {
     }
 
 
+
 }
 
 
@@ -98,11 +101,12 @@ footer {
         justify-content: center;
         align-items: center;
         gap: 0.4rem;
-    };
+    }
 
     .footer-link-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 0;
     }
 
     .footer-link-column {
