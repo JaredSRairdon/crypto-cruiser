@@ -2,7 +2,7 @@ import React from 'react'
 import './Footer.css'
 import Newsletter from './Newsletter'
 import { Link } from 'react-router-dom'
-import { AiFillLinkedin } from 'react-icons/ai'
+import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
 import { SiIndeed } from 'react-icons/si'
 
 function Footer() {
@@ -20,7 +20,7 @@ function Footer() {
             </ul>
           </div>
           <div className="footer-link-column">
-            <h3>Other Projects</h3>
+            <h3>Projects</h3>
             <ul>
               <li><a href="https://jaredsrairdon.github.io/brick-click/">Brick Click</a></li>
               <li><a href="https://jaredsrairdon.github.io/emoji-tac-toe/">Emoji-Tac-Toe!</a></li>
@@ -45,6 +45,7 @@ function Footer() {
           <p>Cookies</p>
         </div>
         <div className="social-icons">
+          <AiFillGithub className='social-icon'/>
           <AiFillLinkedin className='social-icon'/>
           <SiIndeed className='social-icon'/>
         </div>

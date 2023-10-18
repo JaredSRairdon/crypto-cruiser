@@ -5,7 +5,30 @@ import './CryptoList.css'
 function CryptoList() {
     const [cryptoData, setCryptoData] = useState({});
     const [cryptoDataLoading, setCryptoDataLoading] = useState(true);
-    // const { cryptoData, cryptoDataLoading } = useContext(CryptoContext);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
+
+    // format number to US dollar
+    let USDollar = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+
+    function abbreviateNumber(value) {
+        let newValue = value;
+        if (value >= 1e12) { // Trillion
+            newValue = (value / 1e12).toFixed(1) + "T";
+        } else if (value >= 1e9) { // Billion
+            newValue = (value / 1e9).toFixed(1) + "B";
+        } else if (value >= 1e6) { // Million
+            newValue = (value / 1e6).toFixed(1) + "M";
+        }
+        return newValue;
+    }
+
+
+
 
     // function to call CoinGecko API for crypto data
     const fetchCryptoData = async () => {
@@ -41,30 +64,28 @@ function CryptoList() {
 
     }, []);
 
-    // format number to US dollar
-    let USDollar = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-    });
+    const totalPages = Math.ceil(cryptoData.length / itemsPerPage);
 
-    function abbreviateNumber(value) {
-        let newValue = value;
-        if (value >= 1e12) { // Trillion
-            newValue = (value / 1e12).toFixed(1) + "T";
-        } else if (value >= 1e9) { // Billion
-            newValue = (value / 1e9).toFixed(1) + "B";
-        } else if (value >= 1e6) { // Million
-            newValue = (value / 1e6).toFixed(1) + "M";
+    const handleNextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(prevPage => prevPage + 1);
         }
-        return newValue;
     }
+
+    const handlePrevPage =() => {
+        if (currentPage > 1) {
+            setCurrentPage(prevPage => prevPage - 1);
+        }
+    }
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
 
     if (cryptoDataLoading) { 
         return <div>Loading...</div>
     } else if (!cryptoDataLoading) {
-        if (Object.keys(cryptoData).length > 0) { // If cryptoData is not empty
-            const maxItemsToShow = 8;
-            const cryptoListItems = cryptoData.slice(0, maxItemsToShow).map((crypto) => (
+        if (Object.keys(cryptoData).length > 0) { // If cryptoData is not empty   
+            const cryptoListItems = cryptoData.slice(startIndex, endIndex).map((crypto) => (
                 <div key={crypto.id} className="crypto-list-item">
                     <div className="ticker-container">
                         <img src={crypto.image} alt={crypto.name} className='item-image'/>
@@ -92,10 +113,14 @@ function CryptoList() {
                         <button className="crypto-list-button" id='details'>Details</button>
                     </div>
                 </div>
-            ));
-
+            ));         
             return (
-                <div className='crypto-list-container'>{cryptoListItems}</div>
+                <>
+                    <div className='crypto-list-container'>{cryptoListItems}</div>
+                    <button onClick={handlePrevPage}>Previous Page</button>
+                    <button onClick={handleNextPage}>Next Page</button>
+
+                </>
             );
         }
     }

@@ -71,6 +71,11 @@ footer {
     cursor: default;
 }
 
+.social-icons {
+    display: flex;
+    gap: 2rem;
+}
+
 .social-icon {
     font-size: 3rem;
 }
