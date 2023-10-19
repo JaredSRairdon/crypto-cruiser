@@ -1,0 +1,32 @@
+.page-numbers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.page-numbers button {
+    background-color: var(--elevation-bg-1);
+    color: white;
+    padding: 1rem 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    transition: background-color 0.4s;
+}
+
+.page-numbers button:hover {
+    background-color: var(--elevation-bg-4);
+
+}
+
+.page-numbers button.active {
+    background-color: var(--elevation-bg-12);
+}
+
+/* ============ MEDIA QUERIES (MEDIUM DEVICES/TABLET) =========== */
+@media screen and (max-width: 1200px) {
+    .page-numbers button {
+        flex: 0 0 calc(20% - 10px);
+    }
+}

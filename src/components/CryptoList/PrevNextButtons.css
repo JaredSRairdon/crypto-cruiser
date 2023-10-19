@@ -5,11 +5,17 @@
 }
 
 .prev-next-button {
-    background-color: var(--elevation-bg-4);
+    background-color: var(--elevation-bg-1);
     padding: 0.4rem 0.6rem;
     color: white;
     border: none;
     border-radius: 0.2rem;
     display: flex;
     font-size: 1.2rem;
+    transition: background-color 0.4s;
 }
+
+.prev-next-button:hover {
+    background-color: var(--elevation-bg-4);
+}
+

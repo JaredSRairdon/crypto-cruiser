@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { CryptoContext } from '../../contexts/CryptoContext';
 import PrevNextButtons from './PrevNextButtons';
+import PageNumbers from './PageNumbers';
 import './CryptoList.css'
 
 function CryptoList() {
@@ -112,7 +113,15 @@ function CryptoList() {
                                 totalPages={totalPages}
                             />
                         </div>
-                        {cryptoListItems}
+                        <div className="crypto-list-items">
+                            {cryptoListItems}
+                        </div>
+                        <PageNumbers
+                            cryptoData={cryptoData}
+                            setCurrentPage={setCurrentPage}
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                        />
                     </div>
                 </>
             );

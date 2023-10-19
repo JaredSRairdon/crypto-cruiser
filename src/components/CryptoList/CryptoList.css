@@ -13,6 +13,12 @@
     justify-content: space-between;
 }
 
+.crypto-list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .crypto-list-item {
     background-color: var(--elevation-bg-4);
     display: flex;
@@ -92,8 +98,13 @@
 
 }
 
-/* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
-@media screen and (max-width: 480px) {
+/* ============ MEDIA QUERIES (MEDIUM DEVICES/TABLET) =========== */
+@media screen and (max-width: 1200px) {
+    .crypto-list-items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .crypto-list-item {
         flex-direction: column;
     }
@@ -108,5 +119,12 @@
 
     .item-data-container {
         padding: 0 1rem 0 1rem;
+    }
+}
+
+/* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
+@media screen and (max-width: 480px) {
+    .crypto-list-items {
+        display: flex;;
     }
 }
