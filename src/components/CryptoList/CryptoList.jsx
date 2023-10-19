@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { CryptoContext } from '../../contexts/CryptoContext';
+import PrevNextButtons from './PrevNextButtons';
 import './CryptoList.css'
 
 function CryptoList() {
     const [cryptoData, setCryptoData] = useState({});
     const [cryptoDataLoading, setCryptoDataLoading] = useState(true);
-
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 10;
+
+
 
     // format number to US dollar
     let USDollar = new Intl.NumberFormat('en-US', {
@@ -26,9 +27,6 @@ function CryptoList() {
         }
         return newValue;
     }
-
-
-
 
     // function to call CoinGecko API for crypto data
     const fetchCryptoData = async () => {
@@ -64,20 +62,8 @@ function CryptoList() {
 
     }, []);
 
+    const itemsPerPage = 10;
     const totalPages = Math.ceil(cryptoData.length / itemsPerPage);
-
-    const handleNextPage = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(prevPage => prevPage + 1);
-        }
-    }
-
-    const handlePrevPage =() => {
-        if (currentPage > 1) {
-            setCurrentPage(prevPage => prevPage - 1);
-        }
-    }
-
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
@@ -116,10 +102,18 @@ function CryptoList() {
             ));         
             return (
                 <>
-                    <div className='crypto-list-container'>{cryptoListItems}</div>
-                    <button onClick={handlePrevPage}>Previous Page</button>
-                    <button onClick={handleNextPage}>Next Page</button>
-
+                    <div className='crypto-list-container'>
+                        <div className="crypto-list-header">
+                            <h2>Top 100 Crypto</h2>
+                            <PrevNextButtons
+                                cryptoData={cryptoData}
+                                setCurrentPage={setCurrentPage}
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                            />
+                        </div>
+                        {cryptoListItems}
+                    </div>
                 </>
             );
         }

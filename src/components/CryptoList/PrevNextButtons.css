@@ -1,0 +1,15 @@
+.prev-next-buttons {
+    display: flex;
+    gap: 0.7rem;
+    justify-content: flex-end;
+}
+
+.prev-next-button {
+    background-color: var(--elevation-bg-4);
+    padding: 0.4rem 0.6rem;
+    color: white;
+    border: none;
+    border-radius: 0.2rem;
+    display: flex;
+    font-size: 1.2rem;
+}
