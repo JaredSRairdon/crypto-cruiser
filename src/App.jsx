@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Account from './pages/Account/Account';
 import Footer from './components/Footer/Footer';
+import CryptoDetailsPage from './pages/CyptoDetailsPage/CryptoDetailsPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route index element={<Home/>} />
             <Route path="about" element={<About/>} />
             <Route path="account" element={<Account/>} />
+            <Route path="crypto/:id" element={<CryptoDetailsPage/>} />
           </Routes>
         </div>
         <footer><Footer/></footer>

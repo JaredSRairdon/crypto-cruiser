@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { CryptoContext } from '../../contexts/CryptoContext';
+import { useNavigate } from 'react-router-dom'
 import PrevNextButtons from './PrevNextButtons';
 import PageNumbers from './PageNumbers';
 import './CryptoList.css'
 
 function CryptoList() {
-    const [cryptoData, setCryptoData] = useState({});
-    const [cryptoDataLoading, setCryptoDataLoading] = useState(true);
+    const { cryptoData, cryptoDataLoading } = useContext(CryptoContext);
     const [currentPage, setCurrentPage] = useState(1);
 
-
+    const navigate = useNavigate();
 
     // format number to US dollar
     let USDollar = new Intl.NumberFormat('en-US', {
@@ -28,40 +28,6 @@ function CryptoList() {
         }
         return newValue;
     }
-
-    // function to call CoinGecko API for crypto data
-    const fetchCryptoData = async () => {
-        fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then((data) => {
-            // Handle the data from the API
-            setCryptoData(data);
-            console.log(data);
-        })
-        .catch((error) => {
-            // Handle errors
-            console.error('There was a problem with the fetch operation:', error);
-        });
-    }
-
-    // useEffect hook for fetching cryptoData from CoinGecko API on context mount
-    useEffect(() => {
-        console.log("Fetching crypto data...")
-        setCryptoData({});
-        fetchCryptoData()
-            .then(() => {
-                setCryptoDataLoading(false);
-            })
-            .catch((error) => {
-                setCryptoDataLoading(false);
-            });
-
-    }, []);
 
     const itemsPerPage = 10;
     const totalPages = Math.ceil(cryptoData.length / itemsPerPage);
@@ -97,7 +63,7 @@ function CryptoList() {
                     </div>
                     <div className="button-wrapper">
                         <button className='crypto-list-button' id='add-to-watchlist'>Add to Watchlist</button>
-                        <button className="crypto-list-button" id='details'>Details</button>
+                        <button className="crypto-list-button" id='details'onClick={() => navigate(`/crypto/${crypto.id}`)} >Details</button>
                     </div>
                 </div>
             ));         

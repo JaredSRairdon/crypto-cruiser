@@ -8,6 +8,8 @@ import { getAuth } from 'firebase/auth';
 const CryptoContext = createContext();
 
 const CryptoContextProvider = ({ children }) => {
+    const [cryptoData, setCryptoData] = useState({});
+    const [cryptoDataLoading, setCryptoDataLoading] = useState(true);
     const [trendingCrypto, setTrendingCrypto] = useState({});
     const [trendingCryptoLoading, setTrendingCryptoLoading] = useState(true);
 
@@ -25,6 +27,40 @@ const CryptoContextProvider = ({ children }) => {
     const db = getFirestore(app);
     const auth = getAuth();
     const [user] = useAuthState(auth);
+
+    // function to call CoinGecko API for crypto data
+    const fetchCryptoData = async () => {
+        fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            // Handle the data from the API
+            setCryptoData(data);
+            console.log(data);
+        })
+        .catch((error) => {
+            // Handle errors
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    }
+
+    // useEffect hook for fetching cryptoData from CoinGecko API on context mount
+    useEffect(() => {
+        console.log("Fetching crypto data...")
+        setCryptoData({});
+        fetchCryptoData()
+            .then(() => {
+                setCryptoDataLoading(false);
+            })
+            .catch((error) => {
+                setCryptoDataLoading(false);
+            });
+
+    }, []);
 
     const fetchTrendingCrypto = async () => {
         return fetch('https://api.coingecko.com/api/v3/search/trending')
@@ -58,9 +94,9 @@ const CryptoContextProvider = ({ children }) => {
 
     // Provides the game state and actions to consuming components
     const contextValue = {
-        // cryptoData,
-        // setCryptoData,
-        // cryptoDataLoading,
+        cryptoData,
+        setCryptoData,
+        cryptoDataLoading,
         trendingCrypto,
         setTrendingCrypto,
         fetchTrendingCrypto,
