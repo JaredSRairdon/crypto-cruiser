@@ -11,7 +11,7 @@ function NavigationBar() {
 
   return (
     <header className='header'>
-      <h1 className="site-logo">Crypto Cruiser</h1>
+      <Link to="/" id='site-logo'><h1 className="site-logo">Crypto Cruiser</h1></Link>
       <nav className="navbar">
           <Link to="/" className='link'>Home</Link>
           <Link to="about" className='link'>About</Link>

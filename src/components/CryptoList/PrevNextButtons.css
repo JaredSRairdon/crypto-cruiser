@@ -13,6 +13,7 @@
     display: flex;
     font-size: 1.2rem;
     transition: background-color 0.4s;
+    cursor: pointer;
 }
 
 .prev-next-button:hover {

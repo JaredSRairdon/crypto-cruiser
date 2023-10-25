@@ -12,6 +12,7 @@
     align-items: center;
     background-color: var(--elevation-bg-1);
     padding: 1rem;
+    position: relative;
 }
 
 .navbar {
@@ -24,11 +25,16 @@
     border-radius: 1rem;
 }
 
-.site-logo {
+#site-logo {
     position: absolute;
-    left: 0;
+    left: 0rem;
     padding-left: 3rem;
-    color: white
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
 }
 
 .link {

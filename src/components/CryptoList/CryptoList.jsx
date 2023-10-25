@@ -62,7 +62,7 @@ function CryptoList() {
                         </div>
                     </div>
                     <div className="button-wrapper">
-                        <button className='crypto-list-button' id='add-to-watchlist'>Add to Watchlist</button>
+                        {/* <button className='crypto-list-button' id='add-to-watchlist'>Add to Watchlist</button> */}
                         <button className="crypto-list-button" id='details'onClick={() => navigate(`/crypto/${crypto.id}`)} >Details</button>
                     </div>
                 </div>
