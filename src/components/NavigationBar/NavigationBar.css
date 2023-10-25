@@ -48,8 +48,8 @@
         max-height: none;
     }
 
-    .site-logo {
-        position:relative;
+    #site-logo {
+        position: static;
         padding: 0;
     }
 
