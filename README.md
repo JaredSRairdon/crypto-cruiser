@@ -7,3 +7,6 @@ Technologies Used:
         - Page switching/routing
     - Firebase
         - For user authentication
+
+
+        https://github.com/rafgraph/spa-github-pages

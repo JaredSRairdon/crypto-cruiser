@@ -10,7 +10,7 @@ import CryptoDetailsPage from './pages/CyptoDetailsPage/CryptoDetailsPage';
 function App() {
   return (
     <>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename={"/crypto-cruiser"}>
         <NavigationBar />
         <div className="content">
           <Routes>
