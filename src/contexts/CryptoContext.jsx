@@ -96,7 +96,9 @@ const CryptoContextProvider = ({ children }) => {
     const contextValue = {
         cryptoData,
         setCryptoData,
+        fetchCryptoData,
         cryptoDataLoading,
+        setCryptoDataLoading,
         trendingCrypto,
         setTrendingCrypto,
         fetchTrendingCrypto,

@@ -1,14 +1,27 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { CryptoContext } from '../../contexts/CryptoContext'
 
-function CryptoDetailsPage({  }) {
-    const { cryptoData } = useContext(CryptoContext);
+function CryptoDetailsPage() {
+    const { cryptoData, setCryptoData, fetchCryptoData, setCryptoDataLoading } = useContext(CryptoContext);
     const { id } = useParams();
+    const [product, setProduct] = useState({});
 
-    const product = useMemo(() => (
-        cryptoData.find(item => item.id === id)
-    ), [cryptoData, id]);
+    // useEffect hook for fetching cryptoData from CoinGecko API on context mount
+    useEffect(() => {
+        console.log("Fetching crypto data...")
+        setCryptoData({});
+        fetchCryptoData()
+            .then(() => {
+                setCryptoDataLoading(false);
+                product = setProduct(cryptoData.find(item => item.id === id))
+            })
+            .catch((error) => {
+                setCryptoDataLoading(false);
+            });
+
+    }, [])
+    
 
     return (
         <>
