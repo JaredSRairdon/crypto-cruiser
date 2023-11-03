@@ -8,7 +8,7 @@ import { getAuth } from 'firebase/auth';
 const CryptoContext = createContext();
 
 const CryptoContextProvider = ({ children }) => {
-    const [cryptoData, setCryptoData] = useState({});
+    const [cryptoData, setCryptoData] = useState([]);
     const [cryptoDataLoading, setCryptoDataLoading] = useState(true);
     const [trendingCrypto, setTrendingCrypto] = useState({});
     const [trendingCryptoLoading, setTrendingCryptoLoading] = useState(true);
@@ -51,7 +51,7 @@ const CryptoContextProvider = ({ children }) => {
     // useEffect hook for fetching cryptoData from CoinGecko API on context mount
     useEffect(() => {
         console.log("Fetching crypto data...")
-        setCryptoData({});
+        setCryptoData([]);
         fetchCryptoData()
             .then(() => {
                 setCryptoDataLoading(false);

@@ -3,25 +3,43 @@ import { useParams } from 'react-router-dom';
 import { CryptoContext } from '../../contexts/CryptoContext'
 
 function CryptoDetailsPage() {
-    const { cryptoData, setCryptoData, fetchCryptoData, setCryptoDataLoading } = useContext(CryptoContext);
+    const { cryptoData, setCryptoData, cryptoDataLoading } = useContext(CryptoContext);
     const { id } = useParams();
     const [product, setProduct] = useState({});
 
     // useEffect hook for fetching cryptoData from CoinGecko API on context mount
-    useEffect(() => {
-        console.log("Fetching crypto data...")
-        setCryptoData({});
-        fetchCryptoData()
-            .then(() => {
-                setCryptoDataLoading(false);
-                product = setProduct(cryptoData.find(item => item.id === id))
-            })
-            .catch((error) => {
-                setCryptoDataLoading(false);
-            });
+    // useEffect(() => {
+    //     console.log("Fetching crypto data...")
+    //     setCryptoData({});
+    //     fetchCryptoData()
+    //         .then(() => {
+    //             setCryptoDataLoading(false);
+    //             setProduct(cryptoData.find(item => item.id === id))
+    //         })
+    //         .catch((error) => {
+    //             setCryptoDataLoading(false);
+    //         });
 
-    }, [])
-    
+    // }, [])
+
+    // if (cryptoData.length > 1) {
+    //     setProduct(cryptoData.find(item => item.id === id))
+    // }
+
+    console.log(cryptoDataLoading)
+// Inside your component
+useEffect(() => {
+    if (!cryptoDataLoading && cryptoData.length > 0) {
+      setProduct(cryptoData.find(item => item.id === id));
+    }
+  }, [cryptoDataLoading, cryptoData, id]); // Add dependencies that, when changed, should re-run this effect
+  
+  if (cryptoDataLoading) {
+    return <div>Loading...</div>;
+  }
+
+
+
 
     return (
         <>
