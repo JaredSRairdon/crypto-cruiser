@@ -16,9 +16,7 @@ function CryptoDetailsPage() {
       }
     }, [cryptoDataLoading, cryptoData, id]); // Add dependencies that, when changed, should re-run this effect
     
-    if (cryptoDataLoading) {
-      return <div>Loading...</div>;
-    } else {
+    if (Object.keys(product).length != 0) {
       return (
         <>
           <div className="crypto-details-page-container">
@@ -36,6 +34,8 @@ function CryptoDetailsPage() {
           </div>
         </>
       )
+  } else {
+    return (<div>Loading...</div>)
   }
 }
 
