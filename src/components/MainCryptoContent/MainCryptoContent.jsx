@@ -18,25 +18,27 @@ function MainCryptoContent({ product }) {
     return (
       <>
         <div className='main-crypto-content'>
+          <span id='rank'># {product.market_cap_rank}</span>
           <div className="crypto-prices">
             <h2 id="price">{currencyFormat(product.current_price)} USD</h2>
             <span id="per-change">{product.price_change_percentage_24h.toFixed(2)} (24H)</span>
-            <span id='rank'># {product.market_cap_rank}</span>
           </div>
           <div className="crypto-data">
             <div className="data-group" id='supply-info'>
-              <h3>Supply</h3>
+              {/* <h3>Supply</h3> */}
               <div className="data-item-container">
-                <div className="data-item">Circulating Supply<br/>{numberFormat(product.circulating_supply)}</div>
-                <div className="data-item">Total Supply<br/>{numberFormat(product.total_supply)}</div>
+                <div className="data-item">Circulating Supply<br/><h3>{numberFormat(product.circulating_supply)}</h3></div>
+                <div className="data-item">Total Supply<br/><h3>{numberFormat(product.total_supply)}</h3></div>
               </div>
             </div>
             <div className="data-group" id='volume-info'>
-              <h3>Trading and Volume</h3>
+              {/* <h3>Trading and Volume</h3> */}
               <div className="data-item-container">
-                <div className="data-item">Total Volume<br/>{numberFormat(product.total_volume)}</div>
-                <div className="data-item">High 24H<br/>{product.high_24h}</div>
-                <div className="data-item">Low 24H<br/>{product.low_24h}</div>
+                <div className="data-item">Total Volume<br/><h3>{numberFormat(product.total_volume)}</h3></div>
+                <div id='low-high-24h'>
+                  <div className="data-item">Low 24H<br/><h3>${product.low_24h} USD</h3></div>
+                  <div className="data-item">High 24H<br/><h3>${product.high_24h} USD</h3></div>
+                </div>
               </div>
             </div>
           </div>
