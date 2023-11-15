@@ -36,8 +36,8 @@ function MainCryptoContent({ product }) {
               <div className="data-item-container">
                 <div className="data-item">Total Volume<br/><h3>{numberFormat(product.total_volume)}</h3></div>
                 <div id='low-high-24h'>
-                  <div className="data-item">Low 24H<br/><h3>${product.low_24h} USD</h3></div>
-                  <div className="data-item">High 24H<br/><h3>${product.high_24h} USD</h3></div>
+                  <div className="data-item">Low 24H<br/><h3>{currencyFormat(product.low_24h)}</h3></div>
+                  <div className="data-item">High 24H<br/><h3>{currencyFormat(product.high_24h)}</h3></div>
                 </div>
               </div>
             </div>

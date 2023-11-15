@@ -104,12 +104,14 @@ case, the `useEffect` hook is used to fetch trending crypto data and update the 
     
         return (
             <>
+              <div className="trending trending-nfts">
                 <div className='trending-crypto-container'>
                     <h2>Trending NFTs</h2>
                     <Slider {...settings}>
                         {trendingNFTItems}
                     </Slider>
                 </div>
+              </div>
             </>
         );
     }

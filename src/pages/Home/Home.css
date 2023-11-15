@@ -6,7 +6,7 @@
 .trending {
     gap: 0.6rem;
     overflow: hidden;
-    margin: 0 1rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
     border-radius: 1rem;
     background-color: var(--elevation-bg-1);
     padding: 1rem;

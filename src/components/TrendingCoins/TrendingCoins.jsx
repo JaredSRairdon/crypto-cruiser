@@ -82,6 +82,7 @@ function TrendingCoins() {
         
         return (
             <>
+              <div className="trending trending-coins">
                 <div className="trending-crypto-container">
                     {
                         <>
@@ -93,6 +94,7 @@ function TrendingCoins() {
 
                     }
                 </div>
+              </div>
             </>
         );
     }

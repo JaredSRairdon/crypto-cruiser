@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { CryptoContext } from '../../contexts/CryptoContext'
 import MainCryptoContent from '../../components/MainCryptoContent/MainCryptoContent'
 import CurrencyConverter from '../../components/CurrencyConverter/CurrencyConverter';
+import TrendingCoins from '../../components/TrendingCoins/TrendingCoins'
+import TrendingNFTs from '../../components/TrendingNFTs/TrendingNFTs'
+
 import './CryptoDetailsPage.css'
 
 function CryptoDetailsPage() {
@@ -20,17 +23,21 @@ function CryptoDetailsPage() {
       return (
         <>
           <div className="crypto-details-page-container">
-            <section className="crypto-details-left">
-              <div className="crypto-ticker">
-                <img src={product.image} alt="icon for the pages crypto" id='crypto-image'/>
-                <h2 id='crypto-name'>{product.name}</h2>
-                <h4 id='crypto-symbol'>{product.symbol.toUpperCase()}</h4>
-              </div>
-              <MainCryptoContent cryptoData={cryptoData} product={product}/>
-            </section>
-            {/* <section className="crypto-details-right">
-              <CurrencyConverter current_price={0}/>
-            </section> */}
+            <TrendingCoins/>
+            <div className="crypto-details-page-content">
+              <section className="crypto-details-left">
+                <div className="crypto-ticker">
+                  <img src={product.image} alt="icon for the pages crypto" id='crypto-image'/>
+                  <h2 id='crypto-name'>{product.name}</h2>
+                  <h4 id='crypto-symbol'>{product.symbol.toUpperCase()}</h4>
+                </div>
+                <MainCryptoContent cryptoData={cryptoData} product={product}/>
+              </section>
+              <section className="crypto-details-right">
+                <CurrencyConverter current_price={0}/>
+              </section>
+            </div>
+            <TrendingNFTs/>
           </div>
         </>
       )

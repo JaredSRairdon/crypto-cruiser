@@ -1,13 +1,19 @@
 .crypto-details-page-container {
+    /* display: flex;
+    flex-direction: row; */
+}
+
+.crypto-details-page-content {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 /* LEFT SECTION */
 .crypto-details-left {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    align-items: flex-start;
     margin: 1rem;
     gap: 0.5rem;
 }
@@ -34,7 +40,7 @@
 .crypto-details-right {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    /* width: 30%; */
     padding: 2rem;
     background-color: var(--elevation-bg-4);
     border-radius: 1rem;
@@ -48,10 +54,14 @@
   
 /* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
 @media screen and (max-width: 480px) {
-    .crypto-details-page-container {
-        display: flex;
+    .crypto-details-page-content {
         flex-direction: column;
-        align-items: center;
+    }
+
+    .crypto-details-page-container {
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
     }
 
     .crypto-details-left {
