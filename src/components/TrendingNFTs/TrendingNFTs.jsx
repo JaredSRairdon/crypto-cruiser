@@ -61,9 +61,9 @@ case, the `useEffect` hook is used to fetch trending crypto data and update the 
     };
 
 
-    if (trendingCryptoLoading) { 
+    if (Object.keys(trendingCrypto).length === 0) { 
         return <div>Loading...</div>
-    } else if (!trendingCryptoLoading) {
+    } else if (Object.keys(trendingCrypto).length != 0) {
         const maxItemsToShow = 10;
         const trendingNFTItems = trendingCrypto.nfts.slice(0, maxItemsToShow).map((trendingNFT) => (
             <React.Fragment key={trendingNFT.id}>

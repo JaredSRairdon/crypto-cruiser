@@ -52,9 +52,9 @@ function TrendingCoins() {
           ]
     };
 
-    if (trendingCryptoLoading) { 
+    if (Object.keys(trendingCrypto).length === 0) { 
         return <div>Loading...</div>
-    } else if (!trendingCryptoLoading) {
+    } else if (Object.keys(trendingCrypto).length != 0) {
         const maxItemsToShow = 10;
         // TODO: Handle errors for missing data with the below slice function
         const trendingCoinsItems = trendingCrypto.coins.slice(0, maxItemsToShow).map((trendingCoin) => (

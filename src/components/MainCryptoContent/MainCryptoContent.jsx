@@ -25,14 +25,14 @@ function MainCryptoContent({ product }) {
           </div>
           <div className="crypto-data">
             <div className="data-group" id='supply-info'>
-              {/* <h3>Supply</h3> */}
-              <div className="data-item-container">
-                <div className="data-item">Circulating Supply<br/><h3>{numberFormat(product.circulating_supply)}</h3></div>
-                <div className="data-item">Total Supply<br/><h3>{numberFormat(product.total_supply)}</h3></div>
-              </div>
+              <div className="data-item">Low 24H<br/><h3>{currencyFormat(product.low_24h)}</h3></div>
+              
             </div>
-            <div className="data-group" id='volume-info'>
-              {/* <h3>Trading and Volume</h3> */}
+            <div className="data-group" id='supply-info'>
+              <div className="data-item">High 24H<br/><h3>{currencyFormat(product.high_24h)}</h3></div>
+      
+            </div>
+            {/* <div className="data-group" id='volume-info'>
               <div className="data-item-container">
                 <div className="data-item">Total Volume<br/><h3>{numberFormat(product.total_volume)}</h3></div>
                 <div id='low-high-24h'>
@@ -40,7 +40,7 @@ function MainCryptoContent({ product }) {
                   <div className="data-item">High 24H<br/><h3>{currencyFormat(product.high_24h)}</h3></div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </>

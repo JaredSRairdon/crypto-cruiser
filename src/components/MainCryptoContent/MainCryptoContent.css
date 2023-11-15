@@ -16,12 +16,15 @@
     gap: 0.5rem;
     background-color: var(--elevation-bg-4);
     border-radius: 0.5rem;
-    margin: 0.5rem;
+    margin: 0.5rem
 }
 
 #rank {
     position: absolute;
-    right: 0.8rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    right: 0.6rem;
+    top: 1.5rem;
 }
 
 .crypto-data {
@@ -36,24 +39,38 @@
     justify-content: center;
     background-color: var(--elevation-bg-4);
     border-radius: 0.4rem;
-    padding: 0.5rem;
+    padding: 1rem;
     margin: 0.5rem;
     gap: 0.5rem;
 }
 
 .data-item-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .data-item {
     text-align: center;
+    padding: 1rem
 }
+
+.data-item label {
+    font-size: 0.8rem;
+}
+
+#supply-info {
+
+}
+
+
 
 #low-high-24h {
     display: flex;
     gap: 0.5rem;
 }
+
+
 
 /* ============ MEDIA QUERIES (MEDIUM DEVICES/TABLET) =========== */
 @media screen and (max-width: 1200px) {
