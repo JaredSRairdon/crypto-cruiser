@@ -1,9 +1,4 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore'
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
 
 const CryptoContext = createContext();
 
@@ -12,21 +7,6 @@ const CryptoContextProvider = ({ children }) => {
     const [cryptoDataLoading, setCryptoDataLoading] = useState(true);
     const [trendingCrypto, setTrendingCrypto] = useState({});
     const [trendingCryptoLoading, setTrendingCryptoLoading] = useState(true);
-
-    // Firebase initialization
-    const app = initializeApp({
-        apiKey: "AIzaSyDjYUKzRj1FeInoS6UNs7i3ThyFnR9R3Hw",
-        authDomain: "crypto-cruiser.firebaseapp.com",
-        projectId: "crypto-cruiser",
-        storageBucket: "crypto-cruiser.appspot.com",
-        messagingSenderId: "724621495083",
-        appId: "1:724621495083:web:4ce8d15f3c15060129136e",
-        measurementId: "G-BEFY1LFC3S"
-    });
-    
-    const db = getFirestore(app);
-    const auth = getAuth();
-    const [user] = useAuthState(auth);
 
     // function to call CoinGecko API for crypto data
     const fetchCryptoData = async () => {
@@ -48,20 +28,6 @@ const CryptoContextProvider = ({ children }) => {
         });
     }
 
-    // useEffect hook for fetching cryptoData from CoinGecko API on context mount
-    useEffect(() => {
-        console.log("Fetching crypto data...")
-        setCryptoData([]);
-        fetchCryptoData()
-            .then(() => {
-                setCryptoDataLoading(false);
-            })
-            .catch((error) => {
-                setCryptoDataLoading(false);
-            });
-
-    }, []);
-
     const fetchTrendingCrypto = async () => {
         return fetch('https://api.coingecko.com/api/v3/search/trending')
         .then((response) => {
@@ -79,6 +45,20 @@ const CryptoContextProvider = ({ children }) => {
             console.error('There was a problem with the fetch operation:', error);
         });
     }
+
+    // useEffect hook for fetching cryptoData from CoinGecko API on context mount
+    useEffect(() => {
+        console.log("Fetching crypto data...")
+        setCryptoData([]);
+        fetchCryptoData()
+            .then(() => {
+                setCryptoDataLoading(false);
+            })
+            .catch((error) => {
+                setCryptoDataLoading(false);
+            });
+
+    }, []);
 
     useEffect(() => {
         console.log("Fetching trending crypto...")
@@ -102,11 +82,7 @@ const CryptoContextProvider = ({ children }) => {
         trendingCrypto,
         setTrendingCrypto,
         fetchTrendingCrypto,
-        trendingCryptoLoading,
-        user,
-        auth,
-        app,
-        db
+        trendingCryptoLoading
     };
 
     return (

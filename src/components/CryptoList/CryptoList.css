@@ -23,7 +23,7 @@
     background-color: var(--elevation-bg-4);
     display: flex;
     align-items: center;
-    padding: 0.8rem;
+    padding: 1rem;
     text-align: center;
     gap: 1rem;
     position: relative;
@@ -63,7 +63,7 @@
 
 .button-wrapper {
     position: absolute;
-    right: 0;
+    right: 1rem;
     display: flex;
     gap: 1rem;
     justify-content: center;
