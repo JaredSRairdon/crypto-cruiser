@@ -10,14 +10,12 @@ function Home() {
   return (
     <>
       <h1 className="home-header">Unlock the Power of Cryptocurrency.</h1>
-      <body>
-        <TrendingCoins/>
-        <div className="main-section-home">
-          <CryptoList/>
-          <CryptoNews key="cryoto-news-component"/>
-        </div>
-        <TrendingNFTs/>
-      </body>
+      <TrendingCoins/>
+      <div className="main-section-home">
+        <CryptoList/>
+        <CryptoNews key="cryoto-news-component"/>
+      </div>
+      <TrendingNFTs/>
     </>
   )
 }

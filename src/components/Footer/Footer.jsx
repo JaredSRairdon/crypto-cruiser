@@ -7,7 +7,7 @@ import { SiIndeed } from 'react-icons/si'
 
 function Footer() {
   return (
-    <footer class="footer-content">
+    <footer className="footer-content">
       <div className="footer-top">
         <Newsletter/>
         <div className="footer-link-container">
@@ -16,7 +16,7 @@ function Footer() {
             <ul>
               <li><Link to="/" className='link'>Home</Link></li>
               <li><Link to="about" className='link'>About</Link></li>
-              <li><Link to="account" className='link'>Account</Link></li>
+              {/* <li><Link to="account" className='link'>Account</Link></li> */}
             </ul>
           </div>
           <div className="footer-link-column">

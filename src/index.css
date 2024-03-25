@@ -21,6 +21,7 @@
 
   background-color: var(--dark-grey);
   color: white;
+
 }
 
 body {
@@ -34,5 +35,19 @@ a {
 }
 
 .content {
-  /* max-width: 80%; */
+  max-width: 80%;
+}
+
+/* ============ MEDIA QUERIES (MEDIUM DEVICES/TABLET) =========== */
+@media screen and (max-width: 1200px) {
+  .content {
+    max-width: 100%;
+  }
+}
+
+/* ============ MEDIA QUERIES (SMALL DEVICES/PHONE) =========== */
+@media screen and (max-width: 480px) {
+
+
+
 }

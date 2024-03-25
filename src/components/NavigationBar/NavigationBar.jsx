@@ -2,20 +2,20 @@ import React, {useContext} from 'react';
 import { CryptoContext } from '../../contexts/CryptoContext';
 import { Link } from 'react-router-dom';
 import './NavigationBar.css'
-import SignIn from '../SignIn/SignIn';
-import SignOut from '../SignOut/SignOut';
+// import SignIn from '../SignIn/SignIn';
+// import SignOut from '../SignOut/SignOut';
 
 
 function NavigationBar() {
-  const { auth, user } = useContext(CryptoContext);
+  // const { auth, user } = useContext(CryptoContext);
 
   return (
     <header className='header'>
       <Link to="/" id='site-logo'><h1 className="site-logo">Crypto Cruiser</h1></Link>
       <nav className="navbar">
-          <Link to="/" className='link'>Home</Link>
+          {/* <Link to="/" className='link'>Home</Link> */}
           {/* <Link to="about" className='link'>About</Link> */}
-          <Link to="account" className='link'>Account</Link>
+          {/* <Link to="account" className='link'>Account</Link> */}
           {/* {user ? <SignOut/>:<SignIn/>} */}
       </nav>
     </header>

@@ -40,9 +40,9 @@ case, the `useEffect` hook is used to fetch trending crypto data and update the 
         slidesToShow: 3,
         swipeToSlide: true,
         afterChange: function(index) {
-          console.log(
-            `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-          );
+          // console.log(
+          //   `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
+          // );
         },
         responsive: [
             {
@@ -75,7 +75,7 @@ case, the `useEffect` hook is used to fetch trending crypto data and update the 
                       <main className='trending-crypto-data'>
                         <div className="trending-data-item">
                           <p>{trendingNFT.floor_price_24h_percentage_change.toFixed(3)}%</p>
-                          <label>% Change</label>
+                          <label>Change</label>
                         </div>
                       </main>
                     </div>

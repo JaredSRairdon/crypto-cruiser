@@ -33,9 +33,9 @@ function CryptoDetailsPage() {
                 </div>
                 <MainCryptoContent cryptoData={cryptoData} product={product}/>
               </section>
-              <section className="crypto-details-right">
+              {/* <section className="crypto-details-right">
                 <CurrencyConverter current_price={0}/>
-              </section>
+              </section> */}
             </div>
             <TrendingNFTs/>
           </div>

@@ -15,6 +15,9 @@
     position: relative;
 }
 
+.header h1 {
+}
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -46,6 +49,8 @@
     .header {
         flex-direction: column;
         max-height: none;
+        align-items: center;
+        justify-content: center;
     }
 
     #site-logo {

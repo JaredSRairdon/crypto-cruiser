@@ -23,6 +23,7 @@ footer {
     flex-direction: column;
     gap: 0.4rem;
     justify-content: center;
+    border-radius: 1rem;
 }
 
 .newsletter-input-container {
