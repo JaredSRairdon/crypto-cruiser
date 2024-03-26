@@ -7,7 +7,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 // import Account from './pages/Account/Account';
 import Footer from './components/Footer/Footer';
-import CryptoDetailsPage from './pages/CyptoDetailsPage/CryptoDetailsPage';
+import CryptoDetailsPage from './pages/CryptoDetailsPage/CryptoDetailsPage';
 // import Auth from './pages/Account/Auth';
 // import { supabase } from './apis/supabaseClient'
 
